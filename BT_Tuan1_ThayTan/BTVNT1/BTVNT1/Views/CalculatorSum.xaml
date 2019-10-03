@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BTVNT1.Views.CalculatorSum">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="Start" VerticalOptions="Start">
+            <Label Text="Màn Hình Tính tổng!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Nhập số A"/>
+            <Entry x:Name="txtSoA" Placeholder="Nhập Số A" />
+            <Label Text="Nhập Số B"/>
+            <Entry x:Name="txtSoB" Placeholder="Nhập Số B"/>
+            <Label Text="Tổng"/>
+            <Entry x:Name="txtTong" IsEnabled="False" Placeholder="Tổng"/>
+
+            <Button Text="Tính Tổng" Clicked="btnSum" HorizontalOptions="Start" VerticalOptions="Start"/>
+            <Button Text="Về Trang Chủ" Clicked="btnBackHome" HorizontalOptions="Start"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
