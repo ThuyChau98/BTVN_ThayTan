@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="BaiTap3.Views.ThemHoaPage">
+
+    <StackLayout Padding="8">
+        <Label Text="Loai hoa"/>
+        <Picker ItemsSource="{Binding LoaiHoaList}"
+                SelectedIndex="{Binding MaLoai, Mode=TwoWay}"
+                Title="Chon loai hoa"/>
+
+        <Label Text="Ten hoa"/>
+        <Entry Text="{Binding TenHoa}"/>
+
+        <Label Text="Don gia"/>
+        <Entry Text="{Binding DonGia}"/>
+
+        <Label Text="Hinh"/>
+        <Entry Text="{Binding Hinh}"/>
+
+        <Label Text="Mo ta"/>
+        <Editor Text="{Binding MoTa}"
+                HeightRequest="50"/>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Them hoa" Command="{Binding ThemHoaCommand}" HorizontalOptions="Center"/>
+            <Button Text="Xoa hoa" Command="{Binding XoaHoaCommand}" HorizontalOptions="Center"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
