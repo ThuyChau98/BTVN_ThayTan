@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="BaiTap3.Views.MainPage"
+             Title="Cac loai hoa">
+    
+    <StackLayout Padding="8">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"> 
+            <Button Text="Them loai hoa" Command="{Binding ThemLoaiHoaCommand}" HorizontalOptions="Center"/>
+            <Button Text="Them hoa" Command="{Binding ThemHoaCommand}" HorizontalOptions="Center"/>
+        </StackLayout>
+        <ListView ItemsSource="{Binding LoaiHoaList}"
+                  SelectedItem="{Binding LoaiHoaSelected, Mode=TwoWay}">
+            <ListView.Behaviors>
+                <prism:EventToCommandBehavior EventName="ItemSelected"
+                                              Command="{Binding OnLoaiHoaSelectedCommand}"/>
+            </ListView.Behaviors>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding MaLoai}" Detail="{Binding TenLoai}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
+</ContentPage>
